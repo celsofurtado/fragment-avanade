@@ -2,16 +2,9 @@ package br.pro.celsofurtado.fragment_avanade_prof
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import br.pro.celsofurtado.fragment_avanade_prof.factory.RetrofitFactory
 import br.pro.celsofurtado.fragment_avanade_prof.model.User
-import br.pro.celsofurtado.fragment_avanade_prof.service.RetrofitService
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 

@@ -46,15 +46,13 @@ class UsersFragment : Fragment() {
 
     private fun listarUsers() {
 
-        val call = RetrofitFactory().retrofitService().getUsers()
+        val call = RetrofitFactory().userService().getUsers()
 
         call.enqueue(object : Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
 
                 response.body().let {
                     users = it as MutableList<User>
-//                    Log.i("xpto", users.toString())
-//                    Log.i("xpto", users[2].email)
                     adapter.update(users)
                 }
 

@@ -33,15 +33,24 @@ class UsersAdapter(var context: Context): RecyclerView.Adapter<UsersAdapter.User
         holder.tvPhone.text = user.phone
 
         holder.itemView.setOnClickListener {
+
+            // Obter a instância da activity que chamou o adapter
+            // A função do "as" é fazer o casting
             val activity: AppCompatActivity = it.context as AppCompatActivity
+
+            // Instância do fragmento que será exibido
             val postFragment = PostFragment()
 
+            // O bundle é um "pacote" que será responsável por carregar dados no formato chave-valor
             val bundle = Bundle()
             bundle.putString("user_id", user.id.toString())
             bundle.putString("user_name", user.name)
 
+            // Nesta linha estamos adicionando o bundle aos argumentos do fragment
+            // O bundle poderá ser recuperado no fragment de destino
             postFragment.arguments = bundle
 
+            // Nesta linha estamos inserindo o fragment na activity
             activity.supportFragmentManager.beginTransaction().replace(R.id.frame_fragment, postFragment).addToBackStack(null).commit()
         }
 

@@ -4,7 +4,7 @@ import br.pro.celsofurtado.fragment_avanade_prof.model.User
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface RetrofitService {
+interface UserService {
 
     @GET("users")
     fun getUsers(): Call<List<User>>

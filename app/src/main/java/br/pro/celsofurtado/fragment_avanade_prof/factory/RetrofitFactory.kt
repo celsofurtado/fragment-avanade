@@ -1,6 +1,6 @@
 package br.pro.celsofurtado.fragment_avanade_prof.factory
 
-import br.pro.celsofurtado.fragment_avanade_prof.service.RetrofitService
+import br.pro.celsofurtado.fragment_avanade_prof.service.UserService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -13,8 +13,8 @@ class RetrofitFactory {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun retrofitService(): RetrofitService {
-        return retrofitFactory.create(RetrofitService::class.java)
+    fun userService(): UserService {
+        return retrofitFactory.create(UserService::class.java)
     }
 
 }
